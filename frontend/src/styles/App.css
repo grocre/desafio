@@ -1,0 +1,102 @@
+@media only screen and (max-width: 600px) {
+  body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #f3f3f3;
+  }
+
+  .insights {
+    border-radius: 7.5px;
+    padding: 1rem 1rem 1rem 0.5rem;
+    width: 80vw;
+    background-color: #fff;
+    display: block;
+    margin: 2rem auto;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
+  }
+
+  .insights p {
+    font-weight: 600;
+    text-align: justify;
+    margin: 1rem;
+  }
+
+  .insights ul {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .insights li {
+    color: #ed4d77;
+    padding: 0.25rem 1rem;
+    border-radius: 5px;
+    border: 2px solid #fdeaef;
+    margin: 0rem 0.5rem;
+    display: inline-block;
+    text-align: center;
+    font-size: 0.8rem;
+  }
+
+  input,
+  button {
+    margin: auto;
+    display: block;
+    width: 80%;
+  }
+
+  button {
+    height: 10rem;
+    border: none;
+    background-color: #f3f3f3;
+    transition: ease 0.5s;
+  }
+
+  button:hover {
+    cursor: pointer;
+    color: #ed4d77;
+  }
+
+  #header-container {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    height: 30vh;
+    background-image: url("../../public/background.svg");
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    justify-content: space-around;
+  }
+
+  #branding-logo,
+  #plus-logo {
+    position: relative;
+    top: -2rem;
+    margin-top: -60px;
+    height: 12vh;
+    width: 12vw;
+  }
+
+  #profile-photo {
+    position: relative;
+    display: block;
+    border-radius: 50%;
+    height: 8vh;
+    width: auto;
+    margin: 2rem auto 0 auto;
+    border: #ed4d77 solid 2px;
+  }
+
+  #profile-contender p, h2, h3{
+    margin: 10% auto;
+    text-align: center;
+  }
+
+  #profile-contender h3 {
+    margin-top: 1.5rem;
+    color: #ed4d77;
+  }
+
+  a:focus {
+    
+  }
+}

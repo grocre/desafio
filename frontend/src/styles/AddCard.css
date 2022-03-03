@@ -1,0 +1,14 @@
+
+@media only screen and (max-width: 600px) {
+
+    header {
+        background-image: url("../../public/background.svg");
+        height: 15vh;
+        background-position: bottom center;
+        color: #ed4d77;
+    }
+    
+    h2 {
+        margin: 0;
+    }
+}

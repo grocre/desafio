@@ -1,0 +1,33 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://postgres:senha@localhost:5432/appdb?schema=public"
+}
+
+model Card {
+  id               Int          @id @default(autoincrement())
+  texto            String
+  data_criacao     DateTime     @default(now())
+  data_modificacao DateTime     @updatedAt
+  TagsOnCard       TagsOnCard[]
+}
+
+model Tag {
+  id         Int          @id @default(autoincrement())
+  name       String
+  TagsOnCard TagsOnCard[]
+}
+
+model TagsOnCard {
+
+  card Card? @relation(fields: [cardId], references: [id])
+  tag  Tag?  @relation(fields: [tagId], references: [id])
+
+  tagId  Int
+  cardId Int
+
+  @@id([tagId, cardId])
+}
