@@ -6,6 +6,7 @@ type Tag = {
 
 type Card = {
     texto: string;
+    tags: Array<Tag> //pensar em uma maneira diferente
 }
 
 const Resolvers = {
@@ -22,12 +23,10 @@ const Resolvers = {
     Mutation: {
 
         addTag: async (_root: any, args:Tag, _context: any) => {
-            let tag:Tag = args
-            return await prisma.tag.create({data: tag})
+            return await prisma.tag.create({data: args})
         },
         addCard: async (_root:any, args: Card, _context: any) => {
-            let card: Card = args
-            await prisma.card.create({data: card})
+            await prisma.card.create({data: args})
         }
     }
 }
