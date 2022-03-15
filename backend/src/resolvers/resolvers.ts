@@ -26,7 +26,13 @@ const Resolvers = {
             return await prisma.tag.create({data: args})
         },
         addCard: async (_root:any, args: Card, _context: any) => {
-            await prisma.card.create({data: args})
+
+            let tags = await prisma.tag.createMany({data: args.tags})
+            let card = await prisma.card.create({data: args})
+
+            //ver uma maneira de relacionar os dois no resolver
+
+            return card
         }
     }
 }

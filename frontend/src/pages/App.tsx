@@ -1,27 +1,9 @@
+import apollo from "@apollo/client"
+import Card from "../components/Card"
+
 import "../styles/App.css";
-// import Card from "../components/Card";
-// import { useEffect, useState } from "react";
-
-
-// type CardInterface = {
-//   title: String, 
-//   tags: Array<String>
-// }
 
 function App() {
-  // let [cards, setCards] = useState<Array<CardInterface>>([]);
-
-  // async function fetchItens() {
-  //   let itens = await fetch("http://localhost:3333");
-
-  //   return Promise.all(itens)
-  // }
-
-  // useEffect(() => {
-
-  //    fetchItens()
-  //   setCards(cards)
-  // }, []);
 
   return (
     <div className="App">
