@@ -25,7 +25,7 @@ input inputCard {
     texto: String!
     data_criacao: DateTime!
     data_modificacao: DateTime!
-    tags: [Tag]
+    tags: [inputTag]
 }
 
 type Query {
@@ -34,7 +34,7 @@ type Query {
 }
 
 type Mutation {
-    addTag(tag: inputTag): Tag
+    addTag(name: String): Tag
     addCard(card: inputCard): Card
 }
 

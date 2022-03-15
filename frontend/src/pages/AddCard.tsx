@@ -2,15 +2,15 @@ import "../styles/AddCard.css";
 
 export default function AddCard() {
   return (
-    <div>
-      <header>
+    <div id="addCards-container">
+      <header id="header-container">
         <h2>Criar Insight</h2>
         <a href="/">
-          <img alt="Voltar para a página principal" src="" />
+          <img id="rollback-img" alt="Voltar para a página principal" src="./leftArrow.svg" />
         </a>
       </header>
       <form>
-        <span>Insight</span>
+        <span id="form-name">Insight</span>
         <textarea placeholder="Escreva aqui o seu insight..." />
         <span>Categoria</span>
         <input placeholder="Adicione uma categoria (opcional)..." />

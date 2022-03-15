@@ -1,14 +1,67 @@
-
 @media only screen and (max-width: 600px) {
+  #addCard-container {
+    background-color: #fdeaef;
+    font-family: sans-serif;
+  }
 
-    header {
-        background-image: url("../../public/background.svg");
-        height: 15vh;
-        background-position: bottom center;
-        color: #ed4d77;
-    }
-    
-    h2 {
-        margin: 0;
-    }
+  #header-container {
+    height: 20vh;
+    background-image: url("../../public/background.svg");
+    background-position: bottom center;
+    color: #ed4d77;
+  }
+
+  #header-container h2 {
+    margin: 0;
+  }
+
+  #header-container img {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  form {
+    margin: 1rem auto;
+    width: 22rem;
+    height: 30rem;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
+    border-radius: 7.5px;
+    padding: 1rem 1rem 0 1rem;
+  }
+
+  #form-name {
+    margin-bottom: 2rem;
+    display: block;
+  }
+
+  form textarea {
+    margin: 1rem auto;
+    width: 95%;
+    height: 30vh;
+    border: none;
+    background-color: #f3f3f3;
+    border-bottom: 1px solid #ccc;
+  }
+
+  form textarea:focus {
+      outline: 0;
+  }
+
+  form span {
+      margin: 2rem 0 0 0;
+  }
+
+  form input {
+      width: 95%;
+      border: none;
+      background-color: #f3f3f3;
+      font-size: 0.95rem;
+      margin: 10px 0;
+      padding: 0 0 20px 0;
+      border-bottom: 1px solid #ccc;
+  }
+
+  form input {
+      outline: 0;
+  }
 }
