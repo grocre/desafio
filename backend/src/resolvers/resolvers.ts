@@ -6,7 +6,7 @@ type Tag = {
 
 type Card = {
     texto: string;
-    tags: Array<Tag> //pensar em uma maneira diferente
+    tags: Array<Tag>
 }
 
 const Resolvers = {
@@ -25,11 +25,20 @@ const Resolvers = {
         addTag: async (_root: any, args:Tag, _context: any) => {
             return await prisma.tag.create({data: args})
         },
-        addCard: async (_root:any, args: Card, _context: any) => {
+        addCard: async (_root: any, args: Card, _context: any) => {
 
-            let tags = await prisma.tag.createMany({data: args.tags})
-            let card = await prisma.card.create({data: args})
+            args = JSON.parse(JSON.stringify(args))
 
+            let tags = await prisma.tag.createMany({data: args.tags, skipDuplicates: true})
+            let card = await prisma.card.create({data: {
+                texto: args.texto
+            }})
+
+
+            //reorganizar para que possamos criar várias relações de uma vez
+
+            // await prisma.tagsOnCard.createMany({})
+            
             //ver uma maneira de relacionar os dois no resolver
 
             return card
