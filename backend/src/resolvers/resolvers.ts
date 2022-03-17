@@ -16,7 +16,9 @@ const Resolvers = {
             return prisma.tag.findMany()
         }, 
         allCards: () => {
-            return prisma.card.findMany()
+            return prisma.card.findMany({where: {
+                //implementar o inner join
+            })
         }
     },
 
@@ -25,21 +27,21 @@ const Resolvers = {
         addTag: async (_root: any, args:Tag, _context: any) => {
             return await prisma.tag.create({data: args})
         },
+
         addCard: async (_root: any, args: Card, _context: any) => {
 
             args = JSON.parse(JSON.stringify(args))
-
-            let tags = await prisma.tag.createMany({data: args.tags, skipDuplicates: true})
             let card = await prisma.card.create({data: {
                 texto: args.texto
             }})
 
-
-            //reorganizar para que possamos criar várias relações de uma vez
-
-            // await prisma.tagsOnCard.createMany({})
-            
-            //ver uma maneira de relacionar os dois no resolver
+            args.tags.forEach(async tag => {
+                let tagged = await prisma.tag.create({data: tag})
+                await prisma.tagsOnCard.create({data: {
+                    cardId: card.id, 
+                    tagId: tagged.id
+                }})
+            })
 
             return card
         }
